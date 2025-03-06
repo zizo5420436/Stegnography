@@ -1,4 +1,4 @@
-Steganography - Hiding Messages in Images
+#Steganography - Hiding Messages in Images
 📌 Overview
 Steganography is the technique of hiding secret information within digital media, making the presence of communication undetectable. This project implements image steganography using the Least Significant Bit (LSB) technique, specifically in BMP images, to embed and extract hidden messages.
 
