@@ -1,22 +1,82 @@
-#Steganography - Hiding Messages in Images
-📌 Overview
-Steganography is the technique of hiding secret information within digital media, making the presence of communication undetectable. This project implements image steganography using the Least Significant Bit (LSB) technique, specifically in BMP images, to embed and extract hidden messages.
+# 🕵️‍♂️ Steganography - Hiding Messages in Images
 
-🛠 Features
-🔹 Hide Secret Messages – Embed text into BMP images without noticeable distortion.
-🔹 Extract Hidden Data – Retrieve the embedded message from the image.
-🔹 Least Significant Bit (LSB) Encoding – Efficient bit-level manipulation for secure data hiding.
-🔹 Lossless Image Preservation – Ensures minimal visual changes to the original image.
-🔹 Simple and Lightweight – Written in C, with a focus on efficiency and performance.
-🚀 How It Works
-Encoding: The secret message is converted into binary and embedded into the least significant bits of the image pixels.
-Decoding: The hidden data is extracted by reading the modified bits and reconstructing the original message.
+### 📌 Overview
+**Steganography** is the art of hiding secret information within digital media in a way that makes the existence of the communication invisible.  
+This project implements **image steganography** using the **Least Significant Bit (LSB)** technique, specifically for **24-bit BMP images**, allowing you to **embed** and **extract** hidden messages.
 
-📌 Requirements
-C Compiler (GCC)
-BMP image files (24-bit)
-Linux/macOS/Windows (with MinGW)
-🔒 Use Cases
-✔ Secure Communication
-✔ Watermarking Digital Content
-✔ Protecting Sensitive Data
+---
+
+### 🛠 Features
+
+- 🔹 **Hide Secret Messages** – Embed textual data into BMP images with imperceptible changes  
+- 🔹 **Extract Hidden Data** – Retrieve embedded messages accurately  
+- 🔹 **LSB Encoding** – Uses least significant bit manipulation for secure embedding  
+- 🔹 **Lossless Image Preservation** – Original image appearance is virtually unchanged  
+- 🔹 **Simple and Lightweight** – Written in **C**, focused on performance and portability  
+
+---
+
+### 🚀 How It Works
+
+#### ✅ Encoding:
+1. The secret message is first converted into binary format.  
+2. The binary bits are embedded one by one into the **least significant bits** of the image's pixel values (RGB components).  
+3. The result is a visually identical image with the message hidden inside.
+
+#### ✅ Decoding:
+1. The program reads the **least significant bits** of pixels sequentially.  
+2. It reconstructs the binary stream and converts it back to readable text to reveal the hidden message.
+
+---
+
+### 📋 Requirements
+
+- ✅ C Compiler (e.g., **GCC** or **Clang**)  
+- ✅ **24-bit BMP** image files  
+- ✅ OS: Linux, macOS, or Windows (with **MinGW** or equivalent)
+
+---
+
+### 🔒 Use Cases
+
+- ✔ Secure Communication  
+- ✔ Watermarking Digital Media  
+- ✔ Confidential File Tagging  
+- ✔ Data Hiding in Surveillance Systems  
+
+---
+
+### 📥 How to Compile
+
+```bash
+gcc encode.c decode.c steganography_utils.c -o steganography
+```
+
+---
+
+### ▶️ How to Run
+
+```bash
+# To encode
+./steganography encode input.bmp output.bmp "Your secret message"
+
+# To decode
+./steganography decode output.bmp
+```
+
+---
+
+### 🧪 Sample Output
+
+**Encoding:**
+```
+Embedding message: "The password is 1234"
+Message successfully embedded in output.bmp
+```
+
+**Decoding:**
+```
+Extracted message: "The password is 1234"
+```
+
+---
